@@ -41,5 +41,5 @@ class EEAVersionsGet(Service):
         """Reply with versions"""
         versions = EEAVersions(self.context, self.request)
         return versions(expand=True, prefix="expand.eea.")[
-            "versions"
+            "eea.versions"
         ]
