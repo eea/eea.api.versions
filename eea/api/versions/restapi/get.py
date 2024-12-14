@@ -1,3 +1,8 @@
+""" RESTful API endpoint for EEA Versions.
+This module provides the GET endpoint for retrieving version information
+for Plone content items.
+"""
+
 from plone.restapi.interfaces import IExpandableElement
 from plone.restapi.services import Service
 
