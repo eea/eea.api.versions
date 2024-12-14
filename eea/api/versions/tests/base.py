@@ -13,6 +13,7 @@ import eea.api.versions
 class EEAFixture(PloneSandboxLayer):
     """ EEA Testing Policy
     """
+
     def setUpZope(self, app, configurationContext):
         """ Setup Zope
         """
@@ -41,11 +42,11 @@ class EEAFixture(PloneSandboxLayer):
         # Create testing environment
         portal.invokeFactory("Folder", "sandbox", title="Sandbox")
 
-
     def tearDownZope(self, app):
         """ Uninstall Zope
         """
         z2.uninstallProduct(app, 'eea.api.versions')
+
 
 EEAFIXTURE = EEAFixture()
 FUNCTIONAL_TESTING = FunctionalTesting(bases=(EEAFIXTURE,),
