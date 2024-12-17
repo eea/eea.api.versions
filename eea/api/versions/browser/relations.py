@@ -22,7 +22,9 @@ class EEAVersionsView(BrowserView):
             res.append({
                 "@id": brain.getURL(1),
                 "title": brain.Title,
-                "type": brain.portal_type
+                "type": brain.portal_type,
+                "review_state": brain.review_state,
+                "effective": brain.EffectiveDate,
             })
         return res
 

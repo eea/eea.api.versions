@@ -7,9 +7,12 @@ from zope.component import queryMultiAdapter
 from plone.restapi.interfaces import IExpandableElement
 from plone.restapi.services import Service
 
+from Products.CMFCore.interfaces import ISiteRoot
+
 from zope.interface import Interface
 from zope.interface import implementer
 from zope.component import adapter
+from zope.globalrequest import getRequest
 
 
 @implementer(IExpandableElement)
@@ -27,6 +30,14 @@ class EEAVersions:
                 "@id": f"{self.context.absolute_url()}/@eea.versions"
             }
         }
+
+        # avoid large queries on layout pages where context is site
+        request = getRequest()
+        # don't query when we add a new page and we use report_navigation
+        is_site = ISiteRoot.providedBy(self.context)
+        print(request.form)
+        if is_site or 'add?type' in request.get('HTTP_REFERER', ''):
+            return result
 
         relations = queryMultiAdapter(
             (self.context, self.request), name="eea_versions"
