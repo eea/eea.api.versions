@@ -8,7 +8,7 @@ from zope.interface import implementer
 
 
 @implementer(IGroupRelations)
-class GroupRelations(object):
+class GroupRelations:
     """ Relations by group
     """
 
@@ -65,7 +65,7 @@ class GroupRelations(object):
         query = {
             'portal_type': self.context.portal_type,
             self.group: groups,
-            'sort_on': 'effective',
+            'sort_on': 'created',
             'sort_order': 'reverse',
             'effectiveRange': DateTime(),
             'show_inactive': show_inactive,

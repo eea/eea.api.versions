@@ -3,7 +3,6 @@ This module provides the GET endpoint for retrieving version information
 for Plone content items.
 """
 
-from zope.component import queryMultiAdapter
 from plone.restapi.interfaces import IExpandableElement
 from plone.restapi.services import Service
 
@@ -12,6 +11,7 @@ from Products.CMFCore.interfaces import ISiteRoot
 from zope.interface import Interface
 from zope.interface import implementer
 from zope.component import adapter
+from zope.component import queryMultiAdapter
 from zope.globalrequest import getRequest
 
 

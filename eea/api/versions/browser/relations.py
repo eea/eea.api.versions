@@ -10,7 +10,7 @@ class EEAVersionsView(BrowserView):
     """
 
     def __init__(self, context, request):
-        super(EEAVersionsView, self).__init__(context, request)
+        super().__init__(context, request)
         self.context = context
         self.request = request
 
