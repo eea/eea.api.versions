@@ -5,4 +5,4 @@ Changelog
 -----------------------
 
 * Initial release.
-  [eea]
+  [ichim-david refs #280462]
