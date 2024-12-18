@@ -35,7 +35,6 @@ class EEAVersions:
         request = getRequest()
         # don't query when we add a new page and we use report_navigation
         is_site = ISiteRoot.providedBy(self.context)
-        print(request.form)
         if is_site or 'add?type' in request.get('HTTP_REFERER', ''):
             return result
 
