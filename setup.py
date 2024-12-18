@@ -6,17 +6,20 @@ from setuptools import setup, find_packages
 
 NAME = 'eea.api.versions'
 PATH = NAME.split('.') + ['version.txt']
-VERSION = open(join(*PATH)).read().strip()
+with open(join(*PATH), 'r', encoding='utf-8') as version_file:
+    VERSION = version_file.read().strip()
+
+with open("README.rst", 'r', encoding='utf-8') as readme_file:
+    with open(os.path.join("docs", "HISTORY.txt"), 'r',
+              encoding='utf-8') as history_file:
+        long_description = readme_file.read() + "\n" + history_file.read()
 
 setup(
     name=NAME,
     version=VERSION,
     description="Versions based on publication_groups",
     long_description_content_type="text/x-rst",
-    long_description=(
-        open("README.rst").read() + "\n" +
-        open(os.path.join("docs", "HISTORY.txt")).read()
-    ),
+    long_description=long_description,
     classifiers=[
         "Environment :: Web Environment",
         "Framework :: Plone",

@@ -7,15 +7,16 @@ from plone.app.testing import PloneSandboxLayer
 from plone.app.testing import applyProfile
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import setRoles
+import eea.api.versions
 
 
 class EEAFixture(PloneSandboxLayer):
     """ EEA Testing Policy
     """
+
     def setUpZope(self, app, configurationContext):
         """ Setup Zope
         """
-        import eea.api.versions
         self.loadZCML(package=eea.api.versions)
         z2.installProduct(app, 'eea.api.versions')
 
@@ -41,11 +42,11 @@ class EEAFixture(PloneSandboxLayer):
         # Create testing environment
         portal.invokeFactory("Folder", "sandbox", title="Sandbox")
 
-
     def tearDownZope(self, app):
         """ Uninstall Zope
         """
         z2.uninstallProduct(app, 'eea.api.versions')
+
 
 EEAFIXTURE = EEAFixture()
 FUNCTIONAL_TESTING = FunctionalTesting(bases=(EEAFIXTURE,),
