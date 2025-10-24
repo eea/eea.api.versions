@@ -1,2 +1,1 @@
-""" Reports relations
-"""
+"""Reports relations"""
