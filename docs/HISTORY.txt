@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.2-dev0 - (unreleased)
+---------------------------
+* Change: Replace Python linting to ruff
+  [mihaidobrescu1111 = refs #286821]
+
 1.1 - (2024-12-18)
 ---------------------------
 * Removed print statement
