@@ -7,7 +7,6 @@ without requiring plone.restapi.testing.RelativeSession.
 import unittest
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
-from transaction import commit
 from eea.api.versions.tests.base import FUNCTIONAL_TESTING
 
 
@@ -75,7 +74,6 @@ class TestEEAVersionsView(unittest.TestCase):
     def test_eea_versions_returns_dict(self):
         """Test that EEAVersions returns a dict"""
         from eea.api.versions.restapi.get import EEAVersions
-        from zope.interface import Interface
 
         result = EEAVersions(self.portal, self.portal.REQUEST)()
         self.assertIsInstance(result, dict)
