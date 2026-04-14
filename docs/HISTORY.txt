@@ -1,8 +1,10 @@
 Changelog
 =========
 
-1.3-dev0 - (unreleased)
+1.3 - (2026-04-14)
 ---------------------------
+* Change: Add integration tests for eea.versions REST API endpoint
+  [avoinea]
 
 1.2 - (2025-11-18)
 ---------------------------
