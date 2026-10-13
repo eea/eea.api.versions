@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.5 - (2026-10-12)
+---------------------------
+* Change: fix: sort versions by effective date instead of creation date - refs #309424
+  [ana-oprea]
+
 1.4 - (2026-07-13)
 ---------------------------
 * Change: fix: SonarQube report - refs #305404

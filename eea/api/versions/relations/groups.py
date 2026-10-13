@@ -64,7 +64,7 @@ class GroupRelations:
         catalog = getToolByName(self.context, "portal_catalog")
         query = {
             self.group: groups,
-            "sort_on": "created",
+            "sort_on": "effective",
             "sort_order": "reverse",
             "effectiveRange": DateTime(),
             "show_inactive": show_inactive,
